@@ -23,7 +23,7 @@
 #' @rdname knn
 #' @export
 find_knn <- function(data, k, ..., query = NULL, distance = c('euclidean', 'cosine', 'rankcor'), sym = TRUE) {
-	stopifparams(...)
+	chkDots(...)
 	if (!is.double(data)) {
 		warning('find_knn does not yet support sparse matrices, converting data to a dense matrix.')
 		data <- as.matrix(data)
@@ -50,13 +50,4 @@ find_knn <- function(data, k, ..., query = NULL, distance = c('euclidean', 'cosi
 symmetricise <- function(dist_asym) {
 	dist_sym <- symmpart(dist_asym) + abs(forceSymmetric(skewpart(dist_asym), 'U'))
 	as(dist_sym, 'symmetricMatrix')
-}
-
-
-stopifparams <- function(...) {
-	additional <- substitute(list(...))[-1]
-	if (length(additional) == 0) return()
-	nms <- if (is.null(names(additional))) rep('', length(additional)) else names(additional)
-	params <- mapply(function(n, p) if (nchar(n) == 0) p else sprintf('%s = %s', n, p), nms, as.character(additional))
-	stop('Unused argument(s) (', paste(params, collapse = ', '), ')')
 }
