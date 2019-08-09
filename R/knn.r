@@ -46,6 +46,7 @@ find_knn <- function(data, k, ..., query = NULL, distance = c('euclidean', 'cosi
 # (double generic columnsparse to ... symmetric ...: dgCMatrix -> dsCMatrix)
 # retain all differences fully. symmpart halves them in the case of trans_p[i,j] == 0 && trans_p[j,i] > 0
 # TODO: could be more efficient
+#' @importFrom methods as
 #' @importFrom Matrix symmpart skewpart forceSymmetric
 symmetricise <- function(dist_asym) {
 	dist_sym <- symmpart(dist_asym) + abs(forceSymmetric(skewpart(dist_asym), 'U'))
