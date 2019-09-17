@@ -1,0 +1,11 @@
+on: push
+name: Build R package
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: deps
+      uses: r-lib/ghactions/actions/install-deps@master
+    - name: checks
+      uses: r-lib/ghactions/actions/check@master
