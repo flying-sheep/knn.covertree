@@ -20,26 +20,55 @@
 #'   }
 #' }
 #' 
+#' @examples
+#' # The default: symmetricised pairwise distances between all rows
+#' pairwise <- find_knn(mtcars, 5L)
+#' image(as.matrix(pairwise$dist_mat))
+#' 
+#' # Nearest neighbors of a subset within all
+#' mercedeses <- grepl('Merc', rownames(mtcars))
+#' merc_vs_all <- find_knn(mtcars, 5L, query = mtcars[mercedeses, ])
+#' # Replace row index matrix with row name matrix
+#' matrix(
+#'   rownames(mtcars)[merc_vs_all$index],
+#'   nrow(merc_vs_all$index),
+#'   dimnames = list(rownames(merc_vs_all$index), NULL)
+#' )[, -1]  # 1st nearest neighbor is always the same row
+#' 
 #' @rdname knn
 #' @export
 find_knn <- function(data, k, ..., query = NULL, distance = c('euclidean', 'cosine', 'rankcor'), sym = TRUE) {
 	chkDots(...)
-	if (!is.double(data)) {
-		warning('find_knn does not yet support sparse matrices, converting data to a dense matrix.')
-		data <- as.matrix(data)
-	}
+	if (is.null(dim(data))) stop('data needs to be a ')
+	data <- to_matrix(data)
 	distance <- match.arg(distance)
 	if (is.null(query)) {
 		knn <- knn_asym(data, k, distance)
 		if (sym) knn$dist_mat <- symmetricise(knn$dist_mat)
 			nms <- rownames(data)
 	} else {
-		knn <- knn_cross(data, query, k, distance)
+		knn <- knn_cross(data, to_matrix(query), k, distance)
 		nms <- rownames(query)
 	}
 	rownames(knn$dist_mat) <- rownames(knn$index) <- rownames(knn$dist) <- nms
 	colnames(knn$dist_mat) <- rownames(data)
 	knn
+}
+
+
+#' @importFrom methods is
+to_matrix <- function(x) {
+	name <- deparse(substitute(x))
+	if (is.double(x))
+		return(x)
+	if (is.data.frame(x)) {
+		if (!all(sapply(x, is.numeric)))
+			stop('find_knn parameter "', name, '" only works on numeric data.frames.')
+	} else if (!is.integer(x)) {
+		type <- if (is(x, 'sparseMatrix')) 'sparse matrices' else class(x)[[1L]]
+		warning('find_knn parameter "', name, '" does not specifically support ', type, ', converting data to a dense matrix.')
+	}
+	as.matrix(x)
 }
 
 

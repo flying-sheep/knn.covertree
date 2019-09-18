@@ -35,3 +35,19 @@ A \code{\link{list}} with the entries:
 \description{
 k nearest neighbor search with custom distance function.
 }
+\examples{
+# The default: symmetricised pairwise distances between all rows
+pairwise <- find_knn(mtcars, 5L)
+image(as.matrix(pairwise$dist_mat))
+
+# Nearest neighbors of a subset within all
+mercedeses <- grepl('Merc', rownames(mtcars))
+merc_vs_all <- find_knn(mtcars, 5L, query = mtcars[mercedeses, ])
+# Replace row index matrix with row name matrix
+matrix(
+  rownames(mtcars)[merc_vs_all$index],
+  nrow(merc_vs_all$index),
+  dimnames = list(rownames(merc_vs_all$index), NULL)
+)[, -1]  # 1st nearest neighbor is always the same row
+
+}

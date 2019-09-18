@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 ^\.github/
 ^src/test_main.cpp$
+^LICENSE\.md$
