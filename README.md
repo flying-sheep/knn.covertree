@@ -1,4 +1,4 @@
-knn.covertree [![Workflow badge][]](https://github.com/flying-sheep/knn.covertree/actions)
+knn.covertree [![Workflow badge][]](https://github.com/flying-sheep/knn.covertree/commits/master)
 =============
 
 
