@@ -1,14 +1,14 @@
 Package: knn.covertree
 Type: Package
-Title: A not-Too-Fast but Accurate kNN Implementation Supporting Multiple Distance Measures
+Title: An Accurate kNN Implementation With Multiple Distance Measures
 Version: 1.0
 Date: 2019-09-19
 Authors@R: person('Philipp', 'Angerer', NULL, 'philipp.angerer@helmholtz-muenchen.de', c('cre', 'aut'), comment = c(ORCID = '0000-0002-0369-2888'))
 Maintainer: Philipp Angerer <philipp.angerer@helmholtz-muenchen.de>
-Description: Similarly to the FNN package, this package allows calculation of the k nearest neighbors of a data matrix.
+Description: Similarly to the 'FNN' package, this package allows calculation of the k nearest neighbors (kNN) of a data matrix.
 URL: https://github.com/flying-sheep/knn.covertree
 BugReports: https://github.com/flying-sheep/knn.covertree/issues
-License: GPL-3
+License: AGPL-3
 Imports: Rcpp (>= 1.0.2), RcppEigen (>= 0.3.3.5.0), Matrix, methods
 Suggests: testthat, FNN
 LinkingTo: Rcpp, RcppEigen
