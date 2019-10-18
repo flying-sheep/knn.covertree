@@ -3,7 +3,9 @@ Type: Package
 Title: An Accurate kNN Implementation with Multiple Distance Measures
 Version: 1.0
 Date: 2019-09-19
-Authors@R: person('Philipp', 'Angerer', NULL, 'philipp.angerer@helmholtz-muenchen.de', c('cre', 'aut'), comment = c(ORCID = '0000-0002-0369-2888'))
+Authors@R: c(
+    person('Philipp', 'Angerer', NULL, 'philipp.angerer@helmholtz-muenchen.de', c('cre', 'aut'), comment = c(ORCID = '0000-0002-0369-2888')),
+    person('David', 'Crane', NULL, 'dncrane@gmail.com', c('cph')))
 Maintainer: Philipp Angerer <philipp.angerer@helmholtz-muenchen.de>
 Description:
     Similarly to the 'FNN' package, this package allows calculation of the k nearest neighbors (kNN) of a data matrix.
