@@ -1,8 +1,10 @@
-knn.covertree [![Workflow badge][]](https://github.com/flying-sheep/knn.covertree/commits/master)
-=============
+[![CRAN badge][]](https://cran.r-project.org/package=knn.covertree) [![Workflow badge][]](https://github.com/flying-sheep/knn.covertree/commits/master)
 
-
+[CRAN badge]: https://www.r-pkg.org/badges/version/knn.covertree
 [Workflow badge]: https://github.com/flying-sheep/knn.covertree/workflows/Build%20R%20package/badge.svg
+
+knn.covertree
+=============
 
 A package for precise approximative nearest neighbor search in more than just euclidean space.
 
