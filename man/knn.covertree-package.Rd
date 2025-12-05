@@ -2,9 +2,26 @@
 % Please edit documentation in R/knn.covertree-package.r
 \docType{package}
 \name{knn.covertree}
-\alias{knn.covertree}
 \alias{knn.covertree-package}
+\alias{knn.covertree}
 \title{A not-too-fast but accurate kNN implementation supporting multiple distance measures}
 \description{
-A not-too-fast but accurate kNN implementation supporting multiple distance measures
+Similarly to the 'FNN' package, this package allows calculation of the k nearest neighbors (kNN) of a data matrix. The implementation is based on cover trees introduced by Alina Beygelzimer, Sham Kakade, and John Langford (2006) \doi{10.1145/1143844.1143857}.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/flying-sheep/knn.covertree}
+  \item Report bugs at \url{https://github.com/flying-sheep/knn.covertree/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Philipp Angerer \email{philipp.angerer@helmholtz-muenchen.de} (\href{https://orcid.org/0000-0002-0369-2888}{ORCID})
+
+Authors:
+\itemize{
+  \item David Crane \email{dncrane@gmail.com} [copyright holder]
+}
+
 }

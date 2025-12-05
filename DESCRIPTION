@@ -1,8 +1,8 @@
 Package: knn.covertree
 Type: Package
 Title: An Accurate kNN Implementation with Multiple Distance Measures
-Version: 1.0
-Date: 2019-10-24
+Version: 1.1
+Date: 2025-12-08
 Authors@R: c(
     person('Philipp', 'Angerer', NULL, 'philipp.angerer@helmholtz-muenchen.de', c('cre', 'aut'), comment = c(ORCID = '0000-0002-0369-2888')),
     person('David', 'Crane', NULL, 'dncrane@gmail.com', c('cph', 'aut')))
@@ -17,7 +17,6 @@ License: AGPL-3
 Imports: Rcpp (>= 1.0.2), RcppEigen (>= 0.3.3.5.0), Matrix, methods
 Suggests: testthat, FNN
 LinkingTo: Rcpp, RcppEigen
-SystemRequirements: C++11
 NeedsCompilation: yes
 Encoding: UTF-8
-RoxygenNote: 6.1.1
+RoxygenNote: 7.3.3

@@ -4,8 +4,14 @@
 \alias{find_knn}
 \title{kNN search}
 \usage{
-find_knn(data, k, ..., query = NULL, distance = c("euclidean",
-  "cosine", "rankcor"), sym = TRUE)
+find_knn(
+  data,
+  k,
+  ...,
+  query = NULL,
+  distance = c("euclidean", "cosine", "rankcor"),
+  sym = TRUE
+)
 }
 \arguments{
 \item{data}{Data matrix}
