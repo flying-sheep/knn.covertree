@@ -6,6 +6,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // knn_cross
 List knn_cross(const NumericMatrix data, const NumericMatrix query, const size_t k, const std::string distance);
 RcppExport SEXP _knn_covertree_knn_cross(SEXP dataSEXP, SEXP querySEXP, SEXP kSEXP, SEXP distanceSEXP) {

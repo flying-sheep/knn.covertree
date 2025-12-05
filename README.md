@@ -37,6 +37,6 @@ It provides more distance metrics than [FNN][] and is more precise than [RcppHNS
 
 If anyone knows a faster and similarly precise kNN search in cosine (=rank correlation) space, please tell me!
 
-[destiny]: http://bioconductor.org/packages/destiny/
+[destiny]: https://bioconductor.org/packages/destiny/
 [FNN]: https://CRAN.R-project.org/package=FNN
 [RcppHNSW]: https://github.com/jlmelville/rcpphnsw
